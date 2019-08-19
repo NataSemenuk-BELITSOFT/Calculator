@@ -1,0 +1,16 @@
+.buttonStyle {
+    width: 50px;
+    height: 50px;
+    background-color: rgb(65, 55, 55);
+    color: white;
+    font-size: 25px;
+    font-family: 'Exo', sans-serif;
+    border: 1px solid white;
+    outline: none;
+}
+.buttonStyle:active {
+    background-color: rgb(90, 121, 95);  
+}
+.buttonStyle.equal {
+    background-color: rgb(90, 121, 95);  
+}

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from "prop-types";
-import Button from '../Button/Button.js';
+import Button from '../Button/Button.jsx';
 
 import './ButtonsBox.css';
 
@@ -9,7 +9,7 @@ export default class ButtonsBox extends React.Component {
         clickHandler: PropTypes.func,
     };
 
-    handleClick = buttonName => {
+    handleClick = (buttonName) => {
         this.props.clickHandler(buttonName);
     };
     render() {

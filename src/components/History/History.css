@@ -1,11 +1,15 @@
-.inputStyle {
+.historyBoxStyle {
     width: 178px;
-    height: 50px;
+    height: 30 0px;
     background-color: rgb(65, 55, 55);
     border: none;
     color: white;
     font-size: 25px;
     font-family: 'Exo', sans-serif;
     border: 1px solid white;
-    padding: 10px;
+    padding: 15px;
+    text-align: right;
 }
+.historyBoxStyle p {
+    margin: 0;
+} 

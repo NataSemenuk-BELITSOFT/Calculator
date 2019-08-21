@@ -4,17 +4,13 @@ import './Input.css';
 export default class Input extends React.Component {
     static propTypes = {
         value: PropTypes.string,
+        operation: PropTypes.string,
       };    
     render() {
         return (      
             <div>
-                <div className = 'inputStyle'>{this.props.value}</div>
+                <div className = 'inputStyle'>{this.props.total} {this.props.operation} {this.props.next} </div>
             </div>
         );
     }
 };
-// const Input = () => {
-//     return (
-//         <input className = 'inputStyle'/>
-//     );
-// };

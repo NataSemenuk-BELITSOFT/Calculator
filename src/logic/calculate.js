@@ -1,3 +1,5 @@
+import Big from "big.js";
+
 import operate from "./operate";
 import isNumber from "./isNumber";
 
@@ -14,14 +16,12 @@ export default function calculate(obj, buttonName) {
     if (buttonName === "0" && obj.next === "0") {
       return {};
     }
-
     if (obj.operation) {
       if (obj.next) {
         return { next: obj.next + buttonName };
       }
       return { next: buttonName };
     }
-
     if (obj.next) {
       const next = obj.next === "0" ? buttonName : obj.next + buttonName;
       return {
@@ -39,8 +39,8 @@ export default function calculate(obj, buttonName) {
     if (obj.operation && obj.next) {
       const result = operate(obj.total, obj.next, obj.operation);
       return {
-        total: result
-          .div("100")
+        total: Big(result)
+          .div(Big("100"))
           .toString(),
         next: null,
         operation: null,
@@ -48,8 +48,8 @@ export default function calculate(obj, buttonName) {
     }
     if (obj.next) {
       return {
-        next: obj.next
-          .div("100")
+        next: Big(obj.next)
+          .div(Big("100"))
           .toString(),
       };
     }

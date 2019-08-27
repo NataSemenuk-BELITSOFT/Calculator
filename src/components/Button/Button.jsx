@@ -20,3 +20,20 @@ static propTypes = {
         );
     };
 }
+// import React from 'react';
+// import './History.css';
+// const History = (props) => {
+//     // localStorage.setItem('history', props.history);
+//     let displayedHistory='';
+//     if(localStorage.getItem('history')) {
+//         const history = localStorage.getItem('history').split(',');
+//         displayedHistory = history.map((item) => <p>{item}</p>);
+//     }
+//     return(
+//         <div className = 'historyBoxStyle'>
+//             <h1>History</h1>
+//             {displayedHistory}
+//         </div>
+//     ) 
+// }
+// export default History;

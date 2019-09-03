@@ -20,7 +20,6 @@ export default class Calc extends React.Component{
         let newState = calculate(this.state, buttonName);
         this.setState(newState, () => this.setState(writeHistory(this.state, buttonName)));
     }
-
     render() {
         let history='';
         if(this.state.result) {
@@ -33,13 +32,13 @@ export default class Calc extends React.Component{
                         operation = {this.state.operation} 
                         next = {this.state.next}
                         total = {this.state.total}/>
-                    <ButtonsBox clickHandler = {this.handleClick}/>
+                    <ButtonsBox click = {this.handleClick}/>
                 </div>  
                 <div>
                     <History   
                         history = {history} 
                         clickHandler = {this.handleClick}/>
-                    <AddingButtons/>
+                    <AddingButtons link = '/adding-buttons'/>
                 </div>
             </div>
         )

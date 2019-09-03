@@ -2,13 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './AddingButtons.css'
 
-export default class AddingButtons extends React.Component{
-    render() { 
-        return (
-            
-            <button className = 'addingButtonsStyle' value = ''>
-                <Link to = '/adding-buttons'>Adding buttons</Link>
-            </button>
-        )
-    }
+const AddingButtons = (props) => {
+    const id = props.link;
+    console.log('PROPSSS', id);
+    return (
+        <button 
+            className = 'addingButtonsStyle'>
+            <Link to = {id}>Adding buttons</Link>
+        </button>
+    )
 }
+export default AddingButtons;

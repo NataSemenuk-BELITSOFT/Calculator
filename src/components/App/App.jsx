@@ -11,7 +11,8 @@ export default class App extends React.Component {
         return (
             <Router>
                 <Route exact path = '/' component = { Calc }></Route>
-                <Route path = '/adding-buttons' component = { AddingButtonsPage }></Route>
+                <Route path = '/adding-buttons' render={(props) => 
+                    <AddingButtonsPage {...props} button={ localStorage.getItem('current-button') }/>}/>
             </Router>
         );
     }

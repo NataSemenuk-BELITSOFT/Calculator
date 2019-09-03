@@ -16,3 +16,19 @@
 .addingButtonsPageStyle:focus {
     box-shadow: inset 0px 0px 10px white;
 }
+.addingButtonsPageStyle button{
+    height: 50px;
+    width: 302px;
+    background-color: rgb(65, 55, 55);
+    color: white;
+    font-size: 15px;
+    font-family: 'Exo', sans-serif;
+    border: 1px solid white;
+    outline: none;
+}
+.addingButtonsPageStyle button:hover {
+    background-color: rgb(96, 159, 163);  
+}
+.addingButtonsPageStyle button:active {
+    background-color: rgb(65, 70, 92);  
+}

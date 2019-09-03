@@ -3,12 +3,11 @@ import { Link } from 'react-router-dom';
 import './AddingButtons.css'
 
 const AddingButtons = (props) => {
-    const id = props.link;
-    console.log('PROPSSS', id);
+    const link = props.link;
     return (
         <button 
             className = 'addingButtonsStyle'>
-            <Link to = {id}>Adding buttons</Link>
+            <Link to = {link}>Adding buttons</Link>
         </button>
     )
 }

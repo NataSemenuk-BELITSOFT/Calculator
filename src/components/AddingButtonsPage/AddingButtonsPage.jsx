@@ -1,27 +1,48 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom'
 import AddingButtons from '../AddingButtons/AddingButtons.jsx';
 
 import './AddingButtonsPage.css';
 
 export default class AddingButtonsPage extends React.Component {
-    addItem = (text) =>  {
-        const newItem = {
-            label: text,
-            id: text
-        };
-        this.setState( ({ calcData }) => {
-            const newArr = [...calcData, newItem];
-            return {
-                calcData: newArr,
-            };
+    state = {
+        label: '',
+        redirect: false,
+    }
+    onLabelChange = (event) => {
+        this.setState({
+            label: event.target.value,
         });
     }
+    onSubmit = (event) => {
+        event.preventDefault();
+        let but = localStorage.getItem('buttons');
+        let index = 0;
+ 
+        if(but != null) {
+            but = but.split(',');
+            index = but.indexOf(this.props.button);
+        } else {
+            but = [];
+        }
+        but = [...but.slice(0, index), this.state.label, ...but.slice(index + 1)];
+
+        localStorage.setItem('buttons', but);
+        this.setState({ redirect: true });
+    };
     render () {
+        if(this.state.redirect){
+            return <Redirect to='/'/>;
+        }
         return (
-            <div className = 'addingButtonsPageStyle'>
-                <input placeholder = 'Enter number'/>
-                <AddingButtons link = '/'/>
-            </div>
+            <form className = 'addingButtonsPageStyle'
+                  onSubmit = {this.onSubmit}>
+                <input type = 'text'
+                       placeholder = 'Enter number'
+                       onChange = { this.onLabelChange }
+                       value={this.state.label}/>
+                <button type = 'submit'>Create</button>
+            </form>
         );
     }
 }

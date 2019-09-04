@@ -34,7 +34,7 @@ export default class Calc extends React.Component{
                         total = {this.state.total}/>
                     <ButtonsBox click = {this.handleClick}/>
                 </div>  
-                <div>
+                <div className = 'asideBox'>
                     <History   
                         history = {history} 
                         clickHandler = {this.handleClick}/>

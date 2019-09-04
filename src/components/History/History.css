@@ -1,14 +1,13 @@
-.historyBoxStyle {
-    width: 240px;
-    min-height: 210px;
+.historyBox {
+    width: 300px;
+    flex-grow: 1;
     background-color: rgb(65, 55, 55);
     border: none;
     color: white;
     font-size: 25px;
     font-family: 'Exo', sans-serif;
     border: 1px solid white;
-    padding: 30px;
 }
-.historyBoxStyle p {
-    margin: 0;
+.historyBox p {
+    margin: 10px;
 } 

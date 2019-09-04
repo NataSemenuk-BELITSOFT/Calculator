@@ -14,12 +14,12 @@ export default function writeHistory(obj, buttonName) {
             prev_history = '';
         }
         if(!obj.result) {
-            prev_history += ',';
+            prev_history += ', ';
         }
         const history = prev_history + obj.history + ' ' + buttonName + ' ' + obj.total;
         localStorage.setItem('test', history);
         return { 
-            history: '',
+            history: ' ',
             result: true 
         }
     }

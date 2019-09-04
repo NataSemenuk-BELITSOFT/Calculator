@@ -2,9 +2,9 @@ import React from 'react';
 import './Button.css';
 
 const Button = (props) => {
-  const { label , clickHandler } = props;
+  const { label , clickHandler, btnStyle } = props;
   return (
-    <button className = 'buttonStyle' 
+    <button className = {btnStyle}
             onClick =  {() => clickHandler(label.label)}>
               {label.label}
     </button> 

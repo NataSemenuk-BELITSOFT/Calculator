@@ -5,10 +5,9 @@ import './AddingButtons.css'
 const AddingButtons = (props) => {
     const link = props.link;
     return (
-        <button 
-            className = 'addingButtonsStyle'>
-            <Link to = {link}>Adding buttons</Link>
-        </button>
+        <Link to = {link}>
+            <button className = 'addingButtonsStyle'>Adding buttons</button>
+        </Link>
     )
 }
 export default AddingButtons;

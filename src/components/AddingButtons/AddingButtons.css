@@ -7,6 +7,7 @@
     font-family: 'Exo', sans-serif;
     border: 1px solid white;
     outline: none;
+    cursor: pointer;
 }
 .addingButtonsStyle a {
     color: white;

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom'
-import AddingButtons from '../AddingButtons/AddingButtons.jsx';
 
 import './AddingButtonsPage.css';
 

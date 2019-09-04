@@ -8,7 +8,7 @@ const History = (props) => {
         history = '';
     }
     return(
-        <div className = 'historyBoxStyle'>
+        <div className = 'historyBox'>
             <p>History</p>
             {history}
         </div>

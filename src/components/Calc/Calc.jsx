@@ -12,10 +12,9 @@ export default class Calc extends React.Component{
         total: null,
         next: null,
         operation: null,
-        history: '',
+        history: JSON.parse(localStorage.getItem('history')) === null ? [] : JSON.parse(localStorage.getItem('history')),
         result: false,
     };
-    //переделай!
     handleClick = (buttonName) => {
         let newState = calculate(this.state, buttonName);
         this.setState(newState, () => this.setState(writeHistory(this.state, buttonName)));
@@ -38,7 +37,7 @@ export default class Calc extends React.Component{
                     <History   
                         history = {history} 
                         clickHandler = {this.handleClick}/>
-                    <AddingButtons link = '/adding-users' title = 'Adding users'/>
+                    <AddingButtons link = '/adding-users' title = 'Change user'/>
                     <AddingButtons link = '/adding-buttons' title = 'Adding buttons'/>
                 </div>
             </div>

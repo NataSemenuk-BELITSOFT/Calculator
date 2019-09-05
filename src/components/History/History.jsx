@@ -1,9 +1,9 @@
 import React from 'react';
 import './History.css';
 const History = (props) => {
-    let history = localStorage.getItem('test');
+    let history = JSON.parse(localStorage.getItem('history'));
     if(history !== null){
-        history = history.split(',').map((item) => <p>{item}</p>);
+        history = history.map((item) => <p>{item}</p>);
     }else {
         history = '';
     }

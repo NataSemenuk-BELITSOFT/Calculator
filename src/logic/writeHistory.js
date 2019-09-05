@@ -1,26 +1,30 @@
 export default function writeHistory(obj, buttonName) {
+    const len = obj.history.length; 
     if(buttonName === 'c') {
-        return {            
+        return {
+            history: [],
         }
     }
     if(buttonName !== '=') {
+        if(len) {
+            obj.history[len-1] = obj.history[len-1] + buttonName;
+        }else {
+            obj.history = [buttonName];
+        }
         return {            
-            history: obj.history + buttonName,
+            history: obj.history,
         }
     }
     if (buttonName === '=') {
-        let prev_history = localStorage.getItem('test');
-        if(prev_history == null){
-            prev_history = '';
+        let prevHistory = JSON.parse(localStorage.getItem('history'));
+        if(prevHistory == null){
+            prevHistory = [];
         }
-        if(!obj.result) {
-            prev_history += ', ';
-        }
-        const history = prev_history + obj.history + ' ' + buttonName + ' ' + obj.total;
-        localStorage.setItem('test', history);
+        const history = [...prevHistory, obj.history[len-1] + buttonName  + obj.total];
+        localStorage.setItem('history', JSON.stringify(history));
         return { 
-            history: ' ',
-            result: true 
+            history: [obj.total],
+            result: true, 
         }
     }
 }

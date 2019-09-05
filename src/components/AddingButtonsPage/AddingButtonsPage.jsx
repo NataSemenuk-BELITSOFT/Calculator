@@ -17,15 +17,15 @@ export default class AddingButtonsPage extends React.Component {
         event.preventDefault();
         let but = localStorage.getItem('buttons');
         let index = 0;
- 
+
         if(but != null) {
             but = but.split(',');
             index = but.indexOf(this.props.button);
         } else {
             but = [];
         }
-        but = [...but.slice(0, index), this.state.label, ...but.slice(index + 1)];
 
+        but = [this.state.label, ...but.slice(index + 1)];
         localStorage.setItem('buttons', but);
         this.setState({ redirect: true });
     };

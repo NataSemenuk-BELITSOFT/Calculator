@@ -89,7 +89,6 @@ const ButtonsBox = ({click}) => {
     const buttons = initialData.map ( (item) => <Button key={item.label} clickHandler={click} label={item} btnStyle={item.btnStyle}/>);
     let customButtons = localStorage.getItem('buttons'), i=0;
     if(customButtons) {
-        console.log('Come');
         customButtons = customButtons.split(',').map((item) => {
             const prop = {
                 label: item,

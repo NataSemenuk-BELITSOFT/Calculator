@@ -38,7 +38,8 @@ export default class Calc extends React.Component{
                     <History   
                         history = {history} 
                         clickHandler = {this.handleClick}/>
-                    <AddingButtons link = '/adding-buttons'/>
+                    <AddingButtons link = '/adding-users' title = 'Adding users'/>
+                    <AddingButtons link = '/adding-buttons' title = 'Adding buttons'/>
                 </div>
             </div>
         )

@@ -2,11 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './AddingButtons.css'
 
-const AddingButtons = (props) => {
-    const link = props.link;
+const AddingButtons = ({ link, title }) => {
     return (
-        <Link to = {link}>
-            <button className = 'addingButtonsStyle'>Adding buttons</button>
+        <Link to = { link }>
+            <button className = 'addingButtonsStyle'>{ title }</button>
         </Link>
     )
 }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { createStore } from 'redux';
 import Input from '../Input/Input.jsx';
 import History from '../History/History.jsx';
@@ -9,26 +9,26 @@ import writeHistory from "../../logic/writeHistory";
 import './Calc.css'
 
 
-const reducer = (state = 0, action) => {
-    switch (action.type) {
-        case 'ADD_USER': 
-            return state + 4;
-        default: 
-            return state;
-    }
-}
-const store = createStore(reducer); 
-store.subscribe(()=> {
-    console.log(store.getState());
-});
-//action creator
-const addUser = () => ({type: 'ADD_USER'}); 
- store.dispatch(addUser());
+// const reducer = (state = 0, action) => {
+//     switch (action.type) {
+//         case 'ADD_USER': 
+//             return state + 4;
+//         default: 
+//             return state;
+//     }
+// }
+// const store = createStore(reducer); 
+// store.subscribe(()=> {
+//     console.log(store.getState());
+// });
+// //action creator
+// const addUser = () => ({type: 'ADD_USER'}); 
+//  store.dispatch(addUser());
 
 
 
 
-export default class Calc extends React.Component{
+export default class Calc extends Component{
     state = {
         total: null,
         next: null,

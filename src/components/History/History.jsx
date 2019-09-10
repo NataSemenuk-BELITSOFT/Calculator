@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './History.css';
-const History = (props) => {
-    let history = JSON.parse(localStorage.getItem('history'));
-    if(history !== null){
+
+ const History = ({ history, clearHistory }) => {
+    if(history.length){
         history = history.map((item) => <p>{item}</p>);
     }else {
         history = '';
@@ -10,8 +10,11 @@ const History = (props) => {
     return(
         <div className = 'historyBox'>
             <p>History</p>
+            <button className = 'clearHistory'
+                    onClick={clearHistory}>Clear</button>
             {history}
         </div>
-    ) 
+    )
 }
+
 export default History;

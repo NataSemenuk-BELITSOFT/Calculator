@@ -11,3 +11,24 @@
 .historyBox p {
     margin: 10px;
 } 
+.clearHistory {
+    position: absolute;
+    bottom: 110px;
+    left: 410px;
+    width: 80px;
+    height: 30px;
+    border-radius: 15px; 
+    background-color: rgb(65, 55, 55);
+    border: 2px solid white;
+    outline: none;
+    color: white;
+    font-size: 15px;
+    font-family: 'Exo', sans-serif;
+}
+.clearHistory:hover {
+    background-color: rgb(128, 137, 175);  
+    cursor: pointer;
+}
+.clearHistory:active {
+    background-color: rgb(65, 70, 92);  
+}

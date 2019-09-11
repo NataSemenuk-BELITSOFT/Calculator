@@ -11,10 +11,10 @@ export default class App extends Component {
     render() {
         return (
             <Router>
-                <Route exact path = '/calculator' component = { Calc }></Route>
+                <Route path = '/calculator' component = { Calc }></Route>
                 <Route path = '/adding-buttons' render={(props) => 
                     <AddingButtonsPage {...props} button={ localStorage.getItem('current-button') }/>}/>
-                <Route path = '/' render={(props) => 
+                <Route exact path = '/' render={(props) => 
                     <AddingUsersPage {...props} button={ localStorage.getItem('current-user') }/>}/>        
             </Router>
         );

@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import './History.css';
 
  const History = ({ history, clearHistory }) => {
-    if(history.length){
+    if(history && history.length){
         history = history.map((item) => <p>{item}</p>);
     }else {
         history = '';

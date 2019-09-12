@@ -31,7 +31,7 @@ export default class AddingButtonsPage extends React.Component {
     };
     render () {
         if(this.state.redirect){
-            return <Redirect to='/'/>;
+            return <Redirect to='/calculator'/>;
         }
         return (
             <form className = 'addingButtonsPageStyle'

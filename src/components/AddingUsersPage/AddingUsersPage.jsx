@@ -5,7 +5,7 @@ import { addUser } from '../../actions/actions';
 import { connect}  from "react-redux";
 import './AddingUsersPage.css';
 
-export default class AddingUsersPage extends Component {
+class AddingUsersPage extends Component {
     state = {
         label: this.props.userName,
         redirect: false,
@@ -14,19 +14,15 @@ export default class AddingUsersPage extends Component {
         this.setState({
             label: event.target.value,
         });
-        console.log('store', this.props.store);
     }
     onSubmit = (event) => {
         event.preventDefault();
-        // let users = this.props.users;
+        let users = this.props.users;
         // if(!users) {
         //     users = [];
         // }
-        // console.log('props', this.props.users);
-        // console.log('users', users);
         const newUser = createUser(this.state.label);
-        this.props.addUser(newUser); 
-
+        this.props.addUser(newUser);
         this.setState({ redirect: true }); 
     }
     render () {
@@ -36,18 +32,27 @@ export default class AddingUsersPage extends Component {
         return (
             <form className = 'addingUsersPage'
                   onSubmit = {this.onSubmit}>
-                <input type = 'text'
-                       onChange = { this.onNameChange }
-                       placeholder = 'Enter name of new user'/>
-                <button type = 'submit'>Create</button>
+                <div>
+                    <input type = 'text'
+                        onChange = { this.onNameChange }
+                        placeholder = 'Enter name of new user'/>
+                    <button type = 'submit'>Create</button>
+                </div>
             </form>
         );
     }
-}
-// Дописать connect, mapStateToProps, mapDispatchToProps
+};
 const mapStateToProps = ({users}) => {
+    console.log('usssss', users);
     return {
-
+        users,
     };
 }
-export default connect (mapStateToProps)(AddingUsersPage)
+const mapDispatchToProps = (dispatch) => {
+    return {
+        addUser: (users) => {
+            dispatch(addUser(users));
+        }
+    }
+};
+export default connect(mapStateToProps, mapDispatchToProps)(AddingUsersPage);

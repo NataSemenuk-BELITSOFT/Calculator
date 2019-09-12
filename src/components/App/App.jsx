@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Calc from '../Calc/Calc.jsx';
+import Home from '../Home/Home.jsx';
+
 import AddingButtonsPage from '../AddingButtonsPage/AddingButtonsPage.jsx';
 import AddingUsersPage from '../AddingUsersPage/AddingUsersPage.jsx';
 
@@ -11,14 +13,15 @@ export default class App extends Component {
     render() {
         return (
             <Router>
-                <Route path = '/calculator' component = { Calc }></Route>
+                <Route exact path = '/' component = { Home }/>
+                <Route path = '/calculator' component = { Calc }/>
                 <Route path = '/adding-buttons' render={(props) => 
                     <AddingButtonsPage {...props} button={ localStorage.getItem('current-button') }/>}/>
-                <Route exact path = '/' render={(props) => 
-                    <AddingUsersPage {...props} button={ localStorage.getItem('current-user') }/>}/>        
+                        
             </Router>
         );
-    }
-    
+    }  
 }
 
+// <Route exact path = '/' render={(props) => 
+//     <AddingUsersPage {...props} button={ localStorage.getItem('current-user') }/>}/>

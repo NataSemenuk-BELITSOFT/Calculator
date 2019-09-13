@@ -12,19 +12,13 @@ import './History.css';
     render() {
         const history = this.props.curUser.history;
         const historyList = history.map((el) => <p key={el}>{el}</p>);
-        // if(history){
-        //     history = history.map((item) => <p>{item}</p>);
-        // }else {
-        //     history = '';
-        // }
         return(
             <div className = 'historyBox'>
                 <p>History</p>
-                <button className = 'clearHistory'
-                        onClick={this.clearHistory}>Clear</button>
+                <button className = 'clearHistory' onClick={this.clearHistory}>Clear</button>
                 {historyList}
             </div>
-        )
+        );
     }
     
 }
@@ -41,5 +35,5 @@ const mapDispatchToProps = ( dispatch ) => {
         }
     }
 }
+
 export default connect(mapStateToProps, mapDispatchToProps)(History);
-// export default History;

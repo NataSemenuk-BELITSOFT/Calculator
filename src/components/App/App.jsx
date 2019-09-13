@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import Calc from '../Calc/Calc.jsx';
-import Home from '../Home/Home.jsx';
-
-import AddingButtonsPage from '../AddingButtonsPage/AddingButtonsPage.jsx';
-import AddingUsersPage from '../AddingUsersPage/AddingUsersPage.jsx';
+import UserPage from '../../screens/UserPage/UserPage.jsx';
+import Home from '../../screens/Home/Home.jsx';
+import AddingButtonsPage from '../../screens/AddingButtonsPage/AddingButtonsPage.jsx';
 
 import './App.css'
 
@@ -14,14 +12,10 @@ export default class App extends Component {
         return (
             <Router>
                 <Route exact path = '/' component = { Home }/>
-                <Route path = '/calculator' component = { Calc }/>
+                <Route path = '/calculator' component = { UserPage }/>
                 <Route path = '/adding-buttons' render={(props) => 
-                    <AddingButtonsPage {...props} button={ localStorage.getItem('current-button') }/>}/>
-                        
+                    <AddingButtonsPage {...props} button={ localStorage.getItem('current-button') }/>}/>                        
             </Router>
         );
     }  
 }
-
-// <Route exact path = '/' render={(props) => 
-//     <AddingUsersPage {...props} button={ localStorage.getItem('current-user') }/>}/>

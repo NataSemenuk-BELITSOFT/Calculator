@@ -1,14 +1,14 @@
 import { connect } from 'react-redux';
 import React, { Component } from 'react';
-import { createStore } from 'redux';
-import Input from '../Input/Input.jsx';
-import UserName from '../UserName/UserName.jsx';
-import History from '../History/History.jsx';
-import ButtonsBox from '../ButtonsBox/ButtonsBox.jsx';
-import AddingButtons from '../AddingButtons/AddingButtons.jsx';
-import calculate from "../../logic/calculate";
-import './Calc.css'
 import { writeHistory } from '../../actions/actions';
+import Input from '../../components/Input/Input.jsx';
+import UserName from '../../components/UserName/UserName.jsx';
+import History from '../../components/History/History.jsx';
+import ButtonsBox from '../../components/ButtonsBox/ButtonsBox.jsx';
+import AddingButtons from '../../components/AddingButtons/AddingButtons.jsx';
+import calculate from "../../logic/calculate";
+import './UserPage.css'
+
 
 class Calc extends Component{
     state = {
@@ -21,10 +21,6 @@ class Calc extends Component{
         let newState = calculate(this.state, buttonName);
         this.setState(newState, () => this.setState(this.getHistory(this.state, buttonName)));
     }
-    // clearHistory = () => {
-    //     this.setState({ history: [] });
-    //     localStorage.setItem('history', JSON.stringify([]));
-    // }
     getHistory = (obj, buttonName) => {
         const len = obj.history.length; 
         if(buttonName === 'c') {
@@ -52,13 +48,13 @@ class Calc extends Component{
             this.props.writeHistory(newUser);
             return { 
                 history: [obj.total],
-            }
+            };
         }
     }
     
     render() {
         return (
-            <div className = 'calcStyle'> 
+            <div className = 'userPage'> 
                 <UserName/>
                 <div>
                     <div>
@@ -66,7 +62,7 @@ class Calc extends Component{
                             operation = {this.state.operation} 
                             next = {this.state.next}
                             total = {this.state.total}/>
-                        <ButtonsBox click = {this.handleClick}/>
+                        <ButtonsBox onClickButton = {this.handleClick}/>
                     </div>  
                     <div className = 'asideBox'>
                         <History/>
@@ -93,7 +89,4 @@ const mapStateToProps = ({ curUser }) => {
     };
   };
   
-  export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(Calc);
+  export default connect(mapStateToProps, mapDispatchToProps)(Calc);

@@ -1,4 +1,4 @@
-.calcStyle {
+.userPage {
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -7,7 +7,7 @@
     margin-right: -50%;
     transform: translate(-50%, -50%);
 }
-.calcStyle>div {
+.userPage>div {
     display: flex;
     flex-direction: row;
 }

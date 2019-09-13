@@ -16,18 +16,6 @@ class AddingButtonsPage extends React.Component {
     }
     onSubmit = (event) => {
         event.preventDefault();
-        // let but = localStorage.getItem('buttons');
-        // let index = 0;
-
-        // if(but != null) {
-        //     but = but.split(',');
-        //     index = but.indexOf(this.props.button);
-        // } else {
-        //     but = [];
-        // }
-
-        // but = [this.state.label, ...but.slice(index + 1)];
-        // localStorage.setItem('buttons', but);
         this.props.addButton(this.state.label);
         this.setState({ redirect: true });
     };

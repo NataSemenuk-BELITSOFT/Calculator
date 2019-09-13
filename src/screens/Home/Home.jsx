@@ -1,17 +1,13 @@
 import React from 'react';
 import '../../actions/actions';
 import { connect } from 'react-redux';
-import { chooseUser, deleteUser } from "../../actions/actions";
+import { chooseUser } from "../../actions/actions";
 import './Home.css'
 import { Link } from 'react-router-dom';
-import AddingUsersPage from '../AddingUsersPage/AddingUsersPage';
+import AddingUsersForm from '../../components/AddingUsersForm/AddingUsersForm';
 
 const Home = ( props ) => {
-    const { chooseUser, deleteUser, users } = props;
-
-    const delUser = ( label, action, item ) => {
-        deleteUser(item.id);
-    };
+    const { chooseUser, users } = props;
 
     const usersList = users.map(( item ) => {
             return (
@@ -22,7 +18,7 @@ const Home = ( props ) => {
         });
     return (
         <div className = 'usersList'>
-            <AddingUsersPage/>
+            <AddingUsersForm/>
             <ul className = 'fieldsUser'>
                 {usersList}
             </ul>
@@ -38,9 +34,6 @@ const mapStateToProps = ({ users }) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        deleteUser: (users) => {
-            dispatch(deleteUser(users));
-        },
         chooseUser: (user, userId) => {
             dispatch(chooseUser(user, userId));
         },

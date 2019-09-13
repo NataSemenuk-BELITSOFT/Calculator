@@ -1,9 +1,9 @@
-.addingUsersPage {
+.addingUsersForm {
     display: flex;
     justify-content: center;
     margin: 30px 0;
 }
-.addingUsersPage input{
+.addingUsersForm input{
     display: block;
     width: 270px;
     height: 50px;
@@ -15,7 +15,7 @@
     outline: none;
     padding: 0 15px;
 }
-.addingUsersPage button{
+.addingUsersForm button{
     display: block;
     height: 50px;
     width: 302px;
@@ -27,10 +27,10 @@
     outline: none;
     cursor: pointer;
 }
-.addingUsersPage button:hover {
+.addingUsersForm button:hover {
     background-color: rgb(96, 159, 163);  
 }
-.addingUsersPage button:active {
+.addingUsersForm button:active {
     background-color: rgb(65, 70, 92);  
 }
 .userLabel {

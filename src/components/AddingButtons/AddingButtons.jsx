@@ -5,7 +5,7 @@ import './AddingButtons.css'
 const AddingButtons = ({ link, title }) => {
     return (
         <Link to = { link }>
-            <button className = 'addingButtonsStyle'>{ title }</button>
+            <button className = 'addingButtons'>{ title }</button>
         </Link>
     )
 }

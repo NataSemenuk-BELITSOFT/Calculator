@@ -1,6 +1,6 @@
 .baseButton,
 .clear,
-.res,
+.result,
 .operation {
     min-width: 50px;
     height: 50px;
@@ -14,20 +14,20 @@
 }
 .baseButton:hover,
 .clear:hover,
-.res:hover,
+.result:hover,
 .operation:hover {
     background-color: rgb(128, 137, 175);  
 }
 .baseButton:active,
 .clear:active,
-.res:active,
+.result:active,
 .operation:active {
     background-color: rgb(65, 70, 92);  
 }
 .clear {
     background-color: rgba(103, 0, 31, .8);
 }
-.res {
+.result {
     background-color: rgba(34, 101, 163, .5);
 }
 .operation {

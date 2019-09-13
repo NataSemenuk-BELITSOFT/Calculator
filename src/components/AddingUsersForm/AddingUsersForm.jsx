@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
+import { connect}  from 'react-redux';
 import createUser from '../../logic/createUser';
 import { addUser } from '../../actions/actions';
-import { connect}  from "react-redux";
-import './AddingUsersPage.css';
+import './AddingUsersForm.css';
 
-class AddingUsersPage extends Component {
+class AddingUsersForm extends Component {
     state = {
         label: this.props.userName,
-        redirect: false,
     }
     onNameChange = (event) => {
         this.setState({
@@ -17,17 +15,12 @@ class AddingUsersPage extends Component {
     }
     onSubmit = (event) => {
         event.preventDefault();
-        let users = this.props.users;
         const newUser = createUser(this.state.label);
         this.props.addUser(newUser);
-        this.setState({ redirect: true }); 
     }
     render () {
-        // if(this.state.redirect){
-        //     return <Redirect to='/calculator'/>;
-        // }
         return (
-            <form className = 'addingUsersPage'
+            <form className = 'addingUsersForm'
                   onSubmit = {this.onSubmit}>
                 <div>
                     <input type = 'text'
@@ -51,4 +44,4 @@ const mapDispatchToProps = (dispatch) => {
         }
     }
 };
-export default connect(mapStateToProps, mapDispatchToProps)(AddingUsersPage);
+export default connect(mapStateToProps, mapDispatchToProps)(AddingUsersForm);

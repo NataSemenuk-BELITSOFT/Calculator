@@ -8,13 +8,14 @@ import AddingUsersPage from '../AddingUsersPage/AddingUsersPage';
 
 const Home = ( props ) => {
     const { chooseUser, deleteUser, users } = props;
+    console.log('HOME user', users);
     const delUser = ( label, action, item ) => {
         deleteUser(item.id);
     };
     const usersList = users.map(( item ) => {
             return (
               <li key={item['name']}>
-                <Link to = '/calculator' onClick = {() => {chooseUser(item, item.id)}}>{item['name']}</Link>
+                <Link to = '/calculator' onClick = {() => {chooseUser(item, item.id)}}> { item['name'] } </Link>
               </li>  
             );
         });
@@ -22,9 +23,7 @@ const Home = ( props ) => {
         <div className = 'usersList'>
             <AddingUsersPage/>
             <ul className = 'fieldsUser'>
-                <li>
-                    {usersList}
-                </li>
+                {usersList}
             </ul>
         </div>
     );

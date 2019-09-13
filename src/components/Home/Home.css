@@ -1,4 +1,4 @@
-.fieldsUser {
+.fieldsUser {   
     display: flex;
     justify-content: center;
     font-size: 25px;
@@ -6,10 +6,16 @@
     padding: 0;
 }
 .fieldsUser li {
+    text-align: center;
     background-color: rgb(65, 55, 55);
     color: white;
-    height: 70px;
+    padding: 10px;
+    margin: 20px;
     width: 300px;
     border: 1px solid white;
     list-style-type: none;
+}
+.fieldsUser li a {
+    color: white;
+    text-decoration: none;
 }

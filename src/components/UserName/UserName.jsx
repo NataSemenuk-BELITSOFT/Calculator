@@ -5,9 +5,9 @@ import {connect} from "react-redux";
 
 const UserName = ({ currentUser }) => {
     return (
-        <div className = 'nameUser'>
+        <p className = 'nameUser'>
             {currentUser.name}
-        </div>
+        </p>
     );
 };
 
@@ -17,4 +17,4 @@ const mapStateToProps = ({ currentUser }) => {
     };
 };
 
-export default connect(mapStateToProps, null)(UserName);
+export default connect(mapStateToProps)(UserName);

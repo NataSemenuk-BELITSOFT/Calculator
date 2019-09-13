@@ -18,17 +18,14 @@ class AddingUsersPage extends Component {
     onSubmit = (event) => {
         event.preventDefault();
         let users = this.props.users;
-        // if(!users) {
-        //     users = [];
-        // }
         const newUser = createUser(this.state.label);
         this.props.addUser(newUser);
         this.setState({ redirect: true }); 
     }
     render () {
-        if(this.state.redirect){
-            return <Redirect to='/calculator'/>;
-        }
+        // if(this.state.redirect){
+        //     return <Redirect to='/calculator'/>;
+        // }
         return (
             <form className = 'addingUsersPage'
                   onSubmit = {this.onSubmit}>
@@ -43,9 +40,8 @@ class AddingUsersPage extends Component {
     }
 };
 const mapStateToProps = ({users}) => {
-    console.log('usssss', users);
     return {
-        users,
+       users,
     };
 }
 const mapDispatchToProps = (dispatch) => {

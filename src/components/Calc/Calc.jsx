@@ -28,16 +28,18 @@ export default class Calc extends Component{
             <div className = 'calcStyle'> 
                 <UserName/>
                 <div>
-                    <Input 
-                        operation = {this.state.operation} 
-                        next = {this.state.next}
-                        total = {this.state.total}/>
-                    <ButtonsBox click = {this.handleClick}/>
-                </div>  
-                <div className = 'asideBox'>
-                    <History history={ JSON.parse(localStorage.getItem('history')) } clearHistory = {this.clearHistory}/>
-                    <AddingButtons link = '/' title = 'Change user'/>
-                    <AddingButtons link = '/adding-buttons' title = 'Adding buttons'/>
+                    <div>
+                        <Input 
+                            operation = {this.state.operation} 
+                            next = {this.state.next}
+                            total = {this.state.total}/>
+                        <ButtonsBox click = {this.handleClick}/>
+                    </div>  
+                    <div className = 'asideBox'>
+                        <History history={ JSON.parse(localStorage.getItem('history')) } clearHistory = {this.clearHistory}/>
+                        <AddingButtons link = '/' title = 'Change user'/>
+                        <AddingButtons link = '/adding-buttons' title = 'Adding buttons'/>
+                    </div>
                 </div>
             </div>
         )

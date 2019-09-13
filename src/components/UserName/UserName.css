@@ -1,6 +1,4 @@
 .nameUser {
-    width: 178px;
-    height: 50px;
     background-color: rgb(65, 55, 55);
     border: none;
     color: white;
@@ -8,4 +6,5 @@
     font-family: 'Exo', sans-serif;
     border: 1px solid white;
     padding: 10px;
+    margin: 0;
 }

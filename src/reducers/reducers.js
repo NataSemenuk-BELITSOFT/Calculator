@@ -2,10 +2,9 @@ import { initialState } from '../index';
 import * as type from '../actions/actions';
 
 export function reducer ( state = initialState, action) {
-    console.log('STATE', state);
     switch(action.type) {
         case type.ADD_USER: 
-            const users = [state.users, action.user];
+            const users = [...state.users, action.user];
             localStorage.setItem('users', JSON.stringify(users));
             return {
                 ...state,

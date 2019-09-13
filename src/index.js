@@ -6,7 +6,7 @@ import { Provider } from 'react-redux'
 import { reducer } from './reducers/reducers.js'
 
 export const initialState = {
-    users: JSON.parse(localStorage.getItem('users')) === null ? [] : JSON.parse(localStorage.getItem('users')), 
+users: JSON.parse(localStorage.getItem('users')) === null ? [] : JSON.parse(localStorage.getItem('users')), 
     curUser: null,
     curUserId: null,
 }

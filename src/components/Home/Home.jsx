@@ -15,7 +15,7 @@ const Home = ( props ) => {
 
     const usersList = users.map(( item ) => {
             return (
-              <li key={item['name']}>
+              <li key={item['id']}>
                 <Link to = '/calculator' onClick = {() => {chooseUser(item, item.id)}}> { item['name'] } </Link>
               </li>  
             );

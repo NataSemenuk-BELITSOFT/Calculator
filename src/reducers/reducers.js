@@ -51,23 +51,19 @@ export function reducer ( state = initialState, action) {
                 curUser: { ...action.curUser },
             };
         }
-        // case type.CHOOSE_BUTTON: {
-        //     localStorage.setItem('currentButton', action.button);
-        //     return {
-        //         ...state,
-        //         curBtn: action.button,
-        //     };
-        // }
-        // case type.ADD_BUTTON: {
-        //     const curUser = state.curUser;
-        //     curUser.buttons.push(action.button);
-        //     const users = replaceUser(state.users, curUser);
-        //     return {
-        //         ...state,
-        //         users,
-        //         curUser: { ...curUser },
-        //     };
-        // }
+        case type.ADD_BUTTON: {
+            const curUser = state.curUser;
+            curUser.buttons.push(action.button);
+            const index = state.users.findIndex((el) => el['id'] === curUser.id)
+            const users = [...state.users.slice(0, index), curUser, ...state.users.slice(index + 1)];
+            localStorage.setItem('users', JSON.stringify(users));
+            localStorage.setItem('currentUser', JSON.stringify(curUser));
+            return {
+                ...state,
+                users,
+                curUser: { ...curUser },
+            };
+        }
         default:
             return state;
     }

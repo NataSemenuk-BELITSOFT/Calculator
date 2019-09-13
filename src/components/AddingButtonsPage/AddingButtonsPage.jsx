@@ -1,9 +1,10 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom'
-
+import { connect } from 'react-redux';
 import './AddingButtonsPage.css';
+import { addButton } from '../../actions/actions';
 
-export default class AddingButtonsPage extends React.Component {
+class AddingButtonsPage extends React.Component {
     state = {
         label: '',
         redirect: false,
@@ -15,18 +16,19 @@ export default class AddingButtonsPage extends React.Component {
     }
     onSubmit = (event) => {
         event.preventDefault();
-        let but = localStorage.getItem('buttons');
-        let index = 0;
+        // let but = localStorage.getItem('buttons');
+        // let index = 0;
 
-        if(but != null) {
-            but = but.split(',');
-            index = but.indexOf(this.props.button);
-        } else {
-            but = [];
-        }
+        // if(but != null) {
+        //     but = but.split(',');
+        //     index = but.indexOf(this.props.button);
+        // } else {
+        //     but = [];
+        // }
 
-        but = [this.state.label, ...but.slice(index + 1)];
-        localStorage.setItem('buttons', but);
+        // but = [this.state.label, ...but.slice(index + 1)];
+        // localStorage.setItem('buttons', but);
+        this.props.addButton(this.state.label);
         this.setState({ redirect: true });
     };
     render () {
@@ -45,3 +47,16 @@ export default class AddingButtonsPage extends React.Component {
         );
     }
 }
+const mapStateToProps = ( {curUser} ) => {
+    return  {
+        curUser,
+    }
+}
+const mapDispatchToProps = ( dispatch ) => {
+    return {
+        addButton: (curUser) => {
+            dispatch(addButton(curUser));
+        }
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(AddingButtonsPage);

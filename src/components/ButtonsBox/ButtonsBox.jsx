@@ -1,9 +1,10 @@
 import React from 'react';
 import Button from '../Button/Button.jsx';
+import { connect } from 'react-redux';
 
 import './ButtonsBox.css';
 
-const ButtonsBox = ({click}) => {
+const ButtonsBox = ({click, curUser}) => {
     const initialData = [
         {
             label: 'c',
@@ -87,9 +88,9 @@ const ButtonsBox = ({click}) => {
         },
     ];
     const buttons = initialData.map ( (item) => <Button key={item.label} clickHandler={click} label={item} btnStyle={item.btnStyle}/>);
-    let customButtons = localStorage.getItem('buttons'), i=0;
+    let customButtons = curUser.buttons, i=0;
     if(customButtons) {
-        customButtons = customButtons.split(',').map((item) => {
+        customButtons = customButtons.map((item) => {
             const prop = {
                 label: item,
                 clickHandler: click,
@@ -107,5 +108,9 @@ const ButtonsBox = ({click}) => {
         </div>
     );
 };
-
-export default ButtonsBox;
+const mapStateToProps = ( {curUser} ) => {
+    return {
+        curUser,
+    }
+}
+export default connect(mapStateToProps, null)(ButtonsBox);

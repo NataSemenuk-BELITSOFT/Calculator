@@ -8,10 +8,11 @@ import AddingUsersPage from '../AddingUsersPage/AddingUsersPage';
 
 const Home = ( props ) => {
     const { chooseUser, deleteUser, users } = props;
-    console.log('HOME user', users);
+
     const delUser = ( label, action, item ) => {
         deleteUser(item.id);
     };
+
     const usersList = users.map(( item ) => {
             return (
               <li key={item['name']}>

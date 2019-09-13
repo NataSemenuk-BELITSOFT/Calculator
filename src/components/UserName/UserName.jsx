@@ -1,20 +1,19 @@
- import React from 'react';
-
-import './UserName.css'
+import React from 'react';
 import {connect} from "react-redux";
+import './UserName.css'
 
-const UserName = ({ currentUser }) => {
+const UserName = ({ curUser }) => {
     return (
         <p className = 'nameUser'>
-            {currentUser.name}
+            {curUser.name}
         </p>
     );
 };
 
-const mapStateToProps = ({ currentUser }) => {
+const mapStateToProps = ({ curUser }) => {
     return {
-        currentUser
+        curUser,
     };
 };
 
-export default connect(mapStateToProps)(UserName);
+export default connect(mapStateToProps, null)(UserName);

@@ -1,4 +1,5 @@
 export default function writeHistory(obj, buttonName) {
+    console.log('TY', obj, buttonName);
     const len = obj.history.length; 
     if(buttonName === 'c') {
         return {

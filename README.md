@@ -1,1 +1,1 @@
-﻿Calculator by React.js 
+Multifunctional calculator.This project have been done to familiarize with basic principles of React and Redux. It has some nice features such as history-saving (after closing the browser), state retaining and some other.
